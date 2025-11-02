@@ -28,13 +28,13 @@ function App() {
   const team2Progress = Math.min((team2Total / 250) * 100, 100);
 
   const addRound = () => {
-    if (!team1Input || !team2Input) return;
+    if (!team1Input && !team2Input) return;
+    if (gameEnded) return;
 
-    const team1Score = parseInt(team1Input);
-    const team2Score = parseInt(team2Input);
+    const team1Score = team1Input ? parseInt(team1Input) : 0;
+    const team2Score = team2Input ? parseInt(team2Input) : 0;
 
     if (isNaN(team1Score) || isNaN(team2Score)) return;
-    if (gameEnded) return;
 
     const newRound: Round = {
       id: crypto.randomUUID(),
@@ -193,7 +193,7 @@ function App() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           <button
             onClick={addRound}
-            disabled={gameEnded || !team1Input || !team2Input}
+            disabled={gameEnded || (!team1Input && !team2Input)}
             className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-xl font-semibold text-base hover:from-blue-700 hover:to-blue-800 disabled:from-slate-300 disabled:to-slate-400 disabled:cursor-not-allowed transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
           >
             <Plus className="w-5 h-5" />
