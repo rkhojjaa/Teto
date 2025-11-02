@@ -52,7 +52,7 @@ export const translations: Record<Language, Translations> = {
     team2: 'لهم',
     enterScore: 'أدخل النقاط',
     addRound: 'إضافة جولة',
-    reset: 'إعادة',
+    reset: 'لعبة جديدة',
     roundsHistory: 'تاريخ الجولات',
     round: 'جولة',
     noRoundsYet: 'لا توجد جولات بعد. ابدأ بإدخل النقاط أعلاه!',
