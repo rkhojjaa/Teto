@@ -156,7 +156,7 @@ function App() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-2 gap-4 mb-8">
           <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200">
             <h2 className="text-2xl font-bold text-slate-800 mb-3">{t.team1}</h2>
             <div className={`text-6xl font-bold mb-4 ${getScoreColor(1)} transition-colors`}>
